@@ -13,7 +13,6 @@ func main() {
 		fmt.Println("You have administrator privilege")
 	}
 
-	const filePath = "C:\\Windows\\System32\\Winevt\\Logs\\Microsoft-Windows-Sysmon%4Operational.evtx"
-
-	watcher.WatchFile(filePath)
+	guid := watcher.GetLogmanGUID("Microsoft-Windows-Sysmon")
+	watcher.RunETWByGuid(guid)
 }
