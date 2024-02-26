@@ -23,7 +23,7 @@ func WatchFile(filepath string) {
 			if stat.ModTime() != initialStat.ModTime() || stat.Size() != initialStat.Size() {
 				fmt.Printf("File has been modified. Size: %d, ModTime: %v\n", stat.Size(), stat.ModTime())
 				initialStat = stat
-				// EVTXBeats(filepath)
+				EVTXBeats(filepath)
 			}
 
 			time.Sleep(1 * time.Second)

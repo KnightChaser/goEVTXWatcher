@@ -5,7 +5,6 @@ import (
 	"log"
 
 	"github.com/KnightChaser/sentinela"
-	"github.com/tidwall/gjson"
 )
 
 func EVTXBeats(filePath string) {
@@ -14,7 +13,5 @@ func EVTXBeats(filePath string) {
 		log.Fatalf("Error parsing evtx: %s", err)
 	}
 
-	for _, stat := range stats.Event {
-		fmt.Printf("Event: %v\n detected", gjson.Get(stat, "System.EventRecordID"))
-	}
+	fmt.Printf("# of events: %v", len(stats.Event))
 }
