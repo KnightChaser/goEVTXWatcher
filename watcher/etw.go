@@ -48,9 +48,9 @@ func RunETWByGuid(guidInput string) {
 		signal.Notify(trapCancelSignal, os.Interrupt)
 		<-trapCancelSignal // Wait for the termination signal
 		log.Println("Received termination signal. Closing ETW session.")
-		if err := etwSession.Close(); err != nil {
-			log.Printf("Error closing ETW session: %s", err)
-		}
+		// if err := etwSession.Close(); err != nil {
+		// 	log.Printf("Error closing ETW session: %s", err)
+		// }
 		etwWaitGroup.Done()
 	}()
 
